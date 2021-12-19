@@ -146,6 +146,9 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'classroom_name_ar'=>'classroom name in arabic ',
+        'classroom_name_en'=>'classroom name in english ',
+    ],
 
 ];

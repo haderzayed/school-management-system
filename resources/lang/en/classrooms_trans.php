@@ -10,14 +10,16 @@ return [
     'warning_classrooms'=>'are you sure you ant delete this classroom',
     'classroom_name_ar'=>'classroom name in arabic ',
     'classroom_name_en'=>'classroom name in english ',
-    'submit'=>'ارسال',
+    'submit'=>'Submit',
     'name'=>'اسم المرحله',
-    'process'=>'العمليات',
-    'Edit'=>'تعديل',
-    'Delete'=>'حذف',
-    'Update'=>'تعديل',
-    'close'=>'اغلاق',
-    'required'             => 'حقل :attribute مطلوب.',
+    'Processes'=>'process',
+    'Edit'=>'Edit',
+    'Delete'=>'Delete',
+    'Update'=>'update',
+    'close'=>'close',
+    'add_row'=>'Add Row',
+    'delete_row'=>'Delete Row',
+
 
 
 ];

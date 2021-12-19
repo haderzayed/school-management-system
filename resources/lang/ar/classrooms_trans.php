@@ -9,15 +9,16 @@ return [
     'update_classroom'=>'تعديل الف الدراسي',
     'warning_classroom'=>'هل انت متاكد من عملية الحذف؟!',
     'class_name_ar'=>'اسم الصف باللغه العربيه',
-    'class_name_en'=>'اسم الف باللغه الانجليزيه',
+    'class_name_en'=>'اسم الصف باللغه الانجليزيه',
     'submit'=>'ارسال',
     'name'=>'اسم الصف',
-    'process'=>'العمليات',
+    'Processes'=>'العمليات',
     'Edit'=>'تعديل',
     'Delete'=>'حذف',
     'Update'=>'تعديل',
     'close'=>'اغلاق',
-    'required'             => 'حقل :attribute مطلوب.',
+    'add_row'=>'اضافة صف',
+     'delete_row'=>'حذف صف'
 
 
 ];

@@ -4725,11 +4725,11 @@ button.close {
 
 .modal {
     background-color: whitesmoke;
-    width:500px;
+    width:auto;
     height:500px;
     position:absolute;
     top:-50px;
-    left: 0;
+    left:100px;
     bottom: 0;
     right: 190px;
     z-index: 1050;

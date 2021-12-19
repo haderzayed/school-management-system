@@ -30,12 +30,9 @@ Route::group(
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ,'auth']
     ], function(){ //...
-    /*  Route::get('/', function()
-      {
-          return view('dashboard');
-      });*/
+
     Route::get('dashboard','HomeController@index');
-    //Route::resource('grade','Grades\GradeController');
+
     Route::group(['namespace'=>'Grades','prefix'=>'Grades'],function(){
         Route::get('index','GradesController@index')->name('grades.index');
         Route::get('create','GradesController@create')->name('grades.create');
@@ -47,6 +44,8 @@ Route::group(
     });
     Route::group(['namespace'=>'Classrooms','prefix'=>'Classrooms'],function (){
         Route::get('index','ClassroomsController@index')->name('Classrooms.index');
+        Route::get('create','ClassroomsController@create')->name('Classrooms.create');
+        Route::post('store','ClassroomsController@store')->name('Classrooms.store');
 
     });
 });

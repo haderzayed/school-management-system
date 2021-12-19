@@ -28,9 +28,9 @@
 @section('content')
 <!-- row -->
 
+<button type="button" class="button x-small"   data-toggle="modal" data-target="#exampleModal">{{trans('classrooms_trans.add_classroom')}}</button>
 
-    <button class="btn btn-success m-3" data-target="#formModal" id="create-grade" data-toggle="modal" type="submit">{{trans('classrooms_trans.add_classroom')}}</button>
-<div class="row">
+ <div class="row">
     <div class="col-md-12 mb-30">
         <div class="card card-statistics h-100">
             <div class="card-body">
@@ -56,14 +56,14 @@
                         <tbody>
                         @foreach($classrooms as $classroom)
                           <tr>
-                            <td> </td>
-                            <td> </td>
+                            <td> {{$classroom->class_name}}</td>
+                            <td>{{$classroom->grades->name}} </td>
                             <td>
-                                <button type="button" class="btn btn-info btn-sm fa fa-edit" data-target="#formModal" data-toggle="modal" onclick="editGrade({{$grade->id}})"
+                                <button type="button" class="btn btn-info btn-sm fa fa-edit" data-target="#formModal" data-toggle="modal"
                                          name="{{trans('classrooms_trans.edit')}} ">
                                      </button>
 
-                                <a class="btn btn-danger btn-sm fa fa-trash" href="{{route('grades.delete' )}}"> </a>
+                                <a class="btn btn-danger btn-sm fa fa-trash" href= ""> </a>
 
                             </td>
 
@@ -77,13 +77,64 @@
             </div>
         </div>
     </div>
-    <!-- Modal -->
-    <div class="modal" id="formModal" tabindex="-1" role="dialog" aria-hidden="true" >
-        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered"  id="variable_content" role="document">
+    <!-- add_modal_class -->
+    <div class="modal " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-body"  >
 
-
+                <form class=" row mb-30" action="{{route('Classrooms.store')}} " method="POST">
+                    @csrf
+                    <h3 class="pt-5"> {{trans('grades_trans.add_grade')}}</h3>
+                    <hr style="width:auto">
+                    <div class="card-body">
+                        <div class="repeater">
+                            <div data-repeater-list="List_Classes">
+                                <div data-repeater-item>
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="Name" class="mr-sm-2">{{ trans('classrooms_trans.class_name_ar') }}:</label>
+                                            <input class="form-control" type="text" name="class_name_ar" />
+                                        </div>
+                                        <div class="col">
+                                            <label for="Name" class="mr-sm-2">{{ trans('classrooms_trans.class_name_en') }}:</label>
+                                            <input class="form-control" type="text" name="class_name_en" />
+                                        </div>
+                                        <div class="col">
+                                            <label for="Name_en" class="mr-sm-2">{{ trans('grades_trans.name') }}:</label>
+                                            <select class="form-control" name="grade">
+                                                @foreach($grades as $grade)
+                                                <option value="{{$grade->id}}">{{$grade->name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="col">
+                                            <label for="Name_en" class="mr-sm-2">{{ trans('classrooms_trans.Processes') }}:</label>
+                                            <input class="btn btn-danger btn-block" data-repeater-delete type="button" value="{{ trans('classrooms_trans.delete_row') }}" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-20">
+                                <div class="col-12">
+                                    <input class="btn btn-success " data-repeater-create type="button" value="{{ trans('classrooms_trans.add_row') }}"/>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ trans('grades_trans.close') }}</button>
+                                <button type="submit" class="btn btn-success">{{ trans('grades_trans.submit') }}</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
+
         </div>
+
+    </div>
+</div>
+
+
 
 
 
@@ -95,13 +146,13 @@
     <script>
         console.log('dd')
          $(document).ready(function() {
-            $("#create-grade").click(function(event){
+            $("#create-classroom").click(function(event){
 
                 $.ajax({
-                    url: '{{route('grades.create')}}',
+                    url: '{{route('Classrooms.create')}}',
                     type:"get",
                     success:function(response){
-                        console.log(response);
+
                         $('#variable_content').html(response);
                     },
                     error: function(error) {
