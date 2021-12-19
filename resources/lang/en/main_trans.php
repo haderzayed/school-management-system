@@ -5,6 +5,7 @@ return [
     'Dashboard'=>'Dashboard',
     'Change Language'=>'Change Language',
     'Grades'=>'Grades',
+    'classrooms'=>'Classrooms',
     'Grades_list'=>'Grades List',
     'Added Succsesufly'=>'Added Succsesufly',
     'Update Succsesufly'=>'Update Succsesufly',

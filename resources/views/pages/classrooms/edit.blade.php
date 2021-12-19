@@ -1,14 +1,14 @@
 
 
 
-<<form method="post" action="{{route('grades.update',$grade->id)}}" >
+<<form method="post" action="{{route('Classrooms.update',$classroom->id)}}" >
    @csrf
-    <h3> {{trans('grades_trans.update_grade')}}</h3>
+    <h3> {{trans('classrooms_trans.update_classroom')}}</h3>
     <hr style="width:auto">
     <div class="row">
         <div class="col-md-6">
             <label>  {{trans('grades_trans.stage_name_ar')}}  </label>
-            <input type="text" value="{{ $grade->getTranslation('name','ar') }}" id="stage_name_ar"  class="form-control" name="stage_name_ar" >
+            <input type="text" value="{{ $classroom->getTranslation('class_name','ar') }}" id="stage_name_ar"  class="form-control" name="stage_name_ar" >
 
             @error('stage_name_ar')
             <span class="text-danger">{{$message}}</span>
@@ -17,7 +17,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label> {{trans('grades_trans.stage_name_en')}}  </label>
-                <input type="text" value="{{ $grade->getTranslation('name','en') }}" id="stage_name_en" class="form-control" name="stage_name_en" >
+                <input type="text" value="{{ $classroom->getTranslation('class_name','en') }}" id="stage_name_en" class="form-control" name="stage_name_en" >
                 @error('stage_name_en')
                 <span class="text-danger">{{$message}}</span>
                 @enderror
@@ -27,7 +27,14 @@
 
     <div class="form-group">
         <label for="exampleFormControlTextarea1">{{trans('grades_trans.notes')}} </label>
-        <textarea name="notes" class="form-control modal-textarea" id="notes" rows="3">{{$grade->notes}}</textarea>
+        <select name="grade" class="select2 form-control">
+            @if($grades-> count() > 0)
+                @foreach($grades as $grade)
+                    <option value="{{$grade-> id }}" @if($grade ->id == $classroom -> grade_id) selected @endif>{{$grade ->name}}</option>
+                @endforeach
+            @endif
+
+        </select>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">{{trans('grades_trans.close')}}</button>

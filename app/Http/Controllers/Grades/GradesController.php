@@ -97,6 +97,7 @@ class GradesController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         try{
             $data=$request->validate([
                 'stage_name_ar'=>'required' ,
@@ -116,6 +117,7 @@ class GradesController extends Controller
             return redirect()->route('grades.index');
 
         }catch (\Exception $e){
+
             toastr()->error(trans('sorry error'));
 
             return back();

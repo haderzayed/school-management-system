@@ -46,6 +46,9 @@ Route::group(
         Route::get('index','ClassroomsController@index')->name('Classrooms.index');
         Route::get('create','ClassroomsController@create')->name('Classrooms.create');
         Route::post('store','ClassroomsController@store')->name('Classrooms.store');
+        Route::get('/edit/{id}','ClassroomsController@edit')->name('Classrooms.edit');
+        Route::post('update/{id}','ClassroomsController@update')->name('Classrooms.update');
+        Route::get('delete/{id}','ClassroomsController@destroy')->name('Classrooms.delete');
 
     });
 });

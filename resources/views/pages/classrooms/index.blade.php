@@ -48,7 +48,7 @@
                         <thead>
                         <tr>
                             <th>{{trans('classrooms_trans.name')}}</th>
-                            <th>{{trans('grades_trans.notes')}}</th>
+                            <th>{{trans('grades_trans.name')}}</th>
                             <th>{{trans('grades_trans.process')}}</th>
 
                         </tr>
@@ -59,12 +59,10 @@
                             <td> {{$classroom->class_name}}</td>
                             <td>{{$classroom->grades->name}} </td>
                             <td>
-                                <button type="button" class="btn btn-info btn-sm fa fa-edit" data-target="#formModal" data-toggle="modal"
-                                         name="{{trans('classrooms_trans.edit')}} ">
-                                     </button>
-
-                                <a class="btn btn-danger btn-sm fa fa-trash" href= ""> </a>
-
+                                <button type="button" class="btn btn-info btn-sm fa fa-edit" data-target="#formModal" data-toggle="modal" onclick="editClassroom({{$classroom->id}})"
+                                        name="{{trans('classrooms_trans.Edit')}} ">
+                                </button>
+                                <a class="btn btn-danger btn-sm fa fa-trash" href="{{route('Classrooms.delete',$classroom->id)}}"> </a>
                             </td>
 
                         </tr>
@@ -128,12 +126,17 @@
                     </div>
                 </form>
             </div>
-
         </div>
-
     </div>
 </div>
 
+<!-- Modal -->
+<div class="modal" id="formModal" tabindex="-1" role="dialog" aria-hidden="true" >
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered"  id="variable_content" role="document">
+
+
+    </div>
+</div>
 
 
 
@@ -166,9 +169,9 @@
 
         });
 
-        function editGrade(id){
+        function editClassroom(id){
             $.ajax({
-                url:'{{url('/Grades/edit')}}' + '/' + id,
+                url:'{{url('/Classrooms/edit')}}' + '/' + id,
                 type:"get",
                 success:function(response){
                     console.log(response);

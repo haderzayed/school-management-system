@@ -5,6 +5,7 @@ return [
     'Dashboard'=>'لوحة التحكم',
     'Change Language'=>'تغير اللغه',
     'Grades'=>'المراحل الدراسيه',
+    'classrooms'=>'الصفوف الراسيه',
     'Grades_list'=>'قائمة المراحل الدراسيه',
     'Added Succsesufly'=>'تم الاضافه بنجاح',
     'Update Succsesufly'=>'تم التعديل بنجاح',
