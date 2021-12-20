@@ -4723,19 +4723,7 @@ button.close {
 .modal-open {
   overflow: hidden; }
 
-.modal {
-    background-color: whitesmoke;
-    width:auto;
-    height:500px;
-    position:absolute;
-    top:-50px;
-    left:100px;
-    bottom: 0;
-    right: 190px;
-    z-index: 1050;
-    display: none;
-    overflow: hidden;
-    outline: 0;  }
+
 .modal input{
     background-color: #e2e7e0;
 }
@@ -4783,7 +4771,7 @@ button.close {
   flex-direction: column;
   width: 100%;
   pointer-events: auto;
-  background-color: #b92020;
+   background-color: whitesmoke;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: .3rem;
@@ -4832,7 +4820,9 @@ button.close {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
-  padding: 1rem; }
+  padding: 1rem;
+  background-color: whitesmoke;
+}
 
 .modal-footer {
   display: -webkit-box;

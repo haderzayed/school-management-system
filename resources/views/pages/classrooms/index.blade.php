@@ -28,7 +28,27 @@
 @section('content')
 <!-- row -->
 
-<button type="button" class="button x-small"   data-toggle="modal" data-target="#exampleModal">{{trans('classrooms_trans.add_classroom')}}</button>
+    <button type="button" class="button x-small"   data-toggle="modal" data-target="#exampleModal">
+        {{trans('classrooms_trans.add_classroom')}}
+    </button>
+
+        <button type="button" class="button x-small"  id="btn_delete_all" >
+            {{trans('classrooms_trans.delete_all')}}
+        </button>
+
+    <br><br>
+
+    <form action="{{ route('Classrooms.filter_classrooms') }}" method="POST">
+        {{ csrf_field() }}
+        <select class="selectpicker" data-style="btn-info" name="grade_id" required
+                onchange="this.form.submit()">
+            <option value="" selected disabled>{{ trans('classrooms_trans.Search_By_Grade') }}</option>
+            @foreach ($grades as $grade)
+                <option value="{{ $grade->id }}">{{ $grade->name }}</option>
+            @endforeach
+        </select>
+    </form>
+   <br><br>
 
  <div class="row">
     <div class="col-md-12 mb-30">
@@ -47,6 +67,8 @@
                     <table id="datatable" class="table table-striped table-bordered p-0">
                         <thead>
                         <tr>
+                             <th style="width:10px; "></th>
+                            <th style="width:20px; "><input name="select_all"  type="checkbox" value="" id="example_select_all" onclick="CheckAll('box1',this)"></th>
                             <th>{{trans('classrooms_trans.name')}}</th>
                             <th>{{trans('grades_trans.name')}}</th>
                             <th>{{trans('grades_trans.process')}}</th>
@@ -54,8 +76,20 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($classrooms as $classroom)
+
+                        @if (isset($details))
+
+                            <?php $List_Classes = $details; ?>
+                        @else
+
+                            <?php $List_Classes = $classrooms ; ?>
+                        @endif
+                        <?php $i=0; ?>
+                        @foreach($List_Classes as $classroom)
                           <tr>
+                              <?php $i++ ?>
+                             <td>{{$i}}</td>
+                            <td><input type="checkbox" value="{{$classroom->id}}" class="box1"></td>
                             <td> {{$classroom->class_name}}</td>
                             <td>{{$classroom->grades->name}} </td>
                             <td>
@@ -130,12 +164,47 @@
     </div>
 </div>
 
+<!-- حذف مجموعة صفوف -->
+<div class="modal " id="delete_all" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title" id="exampleModalLabel">
+                    {{ trans('classrooms_trans.delete_class') }}
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <form action="{{ route('Classrooms.delete_all') }}" method="POST">
+                {{ csrf_field() }}
+                <div class="modal-body">
+                    {{ trans('main_trans.Warning') }}
+                    <input class="text" type="hidden" id="delete_all_id" name="delete_all_id" value=''>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">{{ trans('main_trans.close') }}</button>
+                    <button type="submit" class="btn btn-danger">{{ trans('main_trans.submit') }}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
 <!-- Modal -->
 <div class="modal" id="formModal" tabindex="-1" role="dialog" aria-hidden="true" >
-    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered"  id="variable_content" role="document">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered"    role="document">
+        <div class="modal-body" id="variable_content" >
+        </div>
 
-
-    </div>
+        </div>
 </div>
 
 
@@ -182,6 +251,19 @@
                 }
             });
         }
+
+        $(function() {
+            $("#btn_delete_all").click(function() {
+                var selected = new Array();
+                $("#datatable input[type=checkbox]:checked").each(function() {
+                    selected.push(this.value);
+                });
+                if (selected.length > 0) {
+                    $('#delete_all').modal('show')
+                    $('input[id="delete_all_id"]').val(selected);
+                }
+            });
+        });
     </script>
 
 @endsection

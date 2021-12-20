@@ -14,5 +14,10 @@ return [
    'Delete Succsesufly'=>'Delete Succsesufly',
     'exists'=>'This field already exists ',
     'Classroom'=>'Classroom ',
-
+    'submit'=>'submit',
+    'Edit'=>'Edit',
+    'Delete'=>'Delete',
+    'Update'=>'update',
+    'close'=>'close',
+    'Warning'=>'you are sure you want delete?!'
 ];

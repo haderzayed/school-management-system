@@ -79,11 +79,13 @@
     </div>
     <!-- Modal -->
     <div class="modal" id="formModal" tabindex="-1" role="dialog" aria-hidden="true" >
-        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered"  id="variable_content" role="document">
-
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered"    role="document">
+            <div class="modal-body" id="variable_content" >
 
             </div>
+
         </div>
+    </div>
 
 
 

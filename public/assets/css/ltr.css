@@ -4225,20 +4225,7 @@ button.close {
 .modal-open {
   overflow: hidden; }
 
-.modal {
-    background-color: whitesmoke;
-    width:500px;
-    height:500px;
-    padding-left:10px;
-    position:absolute;
-  top:-50px;
-  right:180px;
-  bottom: 0;
-  left:190px;
-  z-index: 1050;
-  display: none;
-  overflow: hidden;
-  outline: 0; }
+
 .modal input{
     background-color: #e2e7e0;
 }
@@ -4335,7 +4322,9 @@ button.close {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
-  padding: 1rem; }
+  padding: 1rem;
+    background-color: whitesmoke;
+}
 
 .modal-footer {
   display: -webkit-box;

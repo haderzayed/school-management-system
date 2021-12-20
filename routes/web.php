@@ -49,6 +49,9 @@ Route::group(
         Route::get('/edit/{id}','ClassroomsController@edit')->name('Classrooms.edit');
         Route::post('update/{id}','ClassroomsController@update')->name('Classrooms.update');
         Route::get('delete/{id}','ClassroomsController@destroy')->name('Classrooms.delete');
+        Route::post('delete-all','ClassroomsController@delete_all')->name('Classrooms.delete_all');
+        Route::post('filter-classrooms','ClassroomsController@filter_classrooms')->name('Classrooms.filter_classrooms');
+
 
     });
 });

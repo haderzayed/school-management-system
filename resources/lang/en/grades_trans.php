@@ -18,6 +18,8 @@ return [
     'Delete'=>'Delete',
     'Update'=>'update',
     'close'=>'close',
+    'sorry this grade have classrooms, delete classrooms first'=>'sorry this grade have classrooms, delete classrooms first',
+
 
 
 ];

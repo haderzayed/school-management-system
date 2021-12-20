@@ -104,4 +104,31 @@ class ClassroomsController extends Controller
 
     }
 
+    public function delete_all(Request $request){
+      try{
+          $delete_all_id=explode(",",$request->delete_all_id);
+
+          classroom::whereIn('id',$delete_all_id)->delete();
+          toastr()->success(trans('main_trans.Delete Succsesufly'));
+          return back();
+      }catch (\Exception $e){
+          toastr()->error(trans('main_trans.sorry error'));
+          return back();
+      }
+
+
+    }
+
+    public function filter_classrooms(Request $request){
+
+       $grades=grade::all();
+       $classrooms=classroom::all();
+       $grade_id=$request->grade_id;
+       $search=classroom::where('grade_id',$grade_id)->get();
+        return view('pages.classrooms.index',compact('grades','classrooms') )->withDetails($search);
+    }
+
+
+
+
 }

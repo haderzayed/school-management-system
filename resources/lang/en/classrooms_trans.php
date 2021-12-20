@@ -19,6 +19,9 @@ return [
     'close'=>'close',
     'add_row'=>'Add Row',
     'delete_row'=>'Delete Row',
+    'delete_all'=>'Delete selected classrooms',
+    'delete_class'=>'Delete classrooms',
+    'Search_By_Grade'=>'Search By Grade'
 
 
 

@@ -18,7 +18,10 @@ return [
     'Update'=>'تعديل',
     'close'=>'اغلاق',
     'add_row'=>'اضافة صف',
-     'delete_row'=>'حذف صف'
+     'delete_row'=>'حذف صف',
+    'delete_all'=>'حذف الصفوف المختاره',
+    'delete_class'=>'حذف الصفوف الدراسيه',
+    'Search_By_Grade'=>'ابحث بالفصل الدراسي',
 
 
 ];

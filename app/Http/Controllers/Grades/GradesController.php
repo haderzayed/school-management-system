@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Grades;
 
 use App\Http\Controllers\Controller;
+use App\Models\classroom;
 use App\Models\grade;
 use App\Traits\ResponseTrait;
 use Illuminate\Http\Request;
@@ -138,12 +139,16 @@ class GradesController extends Controller
                 toastr()->error(trans('sorry this grade not found'));
                 return back();
             }
+
+            $classrooms=classroom::where('grade_id',$id)->get();
+            if(!$classrooms){
             grade::destroy($id);
             toastr()->success(trans('main_trans.Delete Succsesufly'));
             return redirect()->route('grades.index');
+            }
+            return redirect()->back()->withErrors(trans('grades_trans.sorry this grade have classrooms, delete classrooms first'));
         }catch (\Exception $exception){
             toastr()->error(trans('sorry error'));
-
             return back();
         }
 

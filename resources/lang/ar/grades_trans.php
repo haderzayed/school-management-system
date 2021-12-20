@@ -19,6 +19,7 @@ return [
     'Update'=>'تعديل',
     'close'=>'اغلاق',
     'required'             => 'حقل :attribute مطلوب.',
+    'sorry this grade have classrooms, delete classrooms first'=>'عفوا هذا الفصل الدراسي به صفوف دراسيه ,قم بمسح الصفوف اولا'
 
 
 ];
