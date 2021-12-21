@@ -52,6 +52,18 @@ Route::group(
         Route::post('delete-all','ClassroomsController@delete_all')->name('Classrooms.delete_all');
         Route::post('filter-classrooms','ClassroomsController@filter_classrooms')->name('Classrooms.filter_classrooms');
 
+    });
+
+    Route::group(['namespace'=>'Sections','prefix'=>'Sections'],function (){
+        Route::get('index','SectionsController@index')->name('Sections.index');
+        Route::get('create','SectionsController@create')->name('Sections.create');
+        Route::post('store','SectionsController@store')->name('Sections.store');
+        Route::get('/edit/{id}','SectionsController@edit')->name('Sections.edit');
+        Route::post('update/{id}','SectionsController@update')->name('Sections.update');
+        Route::get('delete/{id}','SectionsController@destroy')->name('Sections.delete');
+        Route::get('/classrooms/{id}','SectionsController@classrooms');
+
+
 
     });
 });

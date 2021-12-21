@@ -13,4 +13,9 @@ class grade extends Model
     protected $fillable = [
         'name', 'notes'
     ];
+
+    public function sections(){
+
+        return $this->hasMany(section::class,'id');
+    }
 }

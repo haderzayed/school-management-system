@@ -7,15 +7,12 @@
                     <!-- menu item Dashboard-->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#dashboard">
-                            <div class="pull-left"><i class="ti-home"></i><span class="right-nav-text">{{trans('main_trans.Dashboard')}}</span>
-                            </div>
+                            <div class="clearfix"> </div>
+                            <div class="pull-left"><i class="ti-home"></i><span class="right-nav-text">{{trans('main_trans.Dashboard')}} </span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
-                            <div class="clearfix"></div>
-                        </a>
-                        <ul id="dashboard" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="{{route('Classrooms.index')}}">Dashboard 01</a> </li>
 
-                        </ul>
+                        </a>
+
                     </li>
                     <!-- menu title -->
                     <li class="mt-10 mb-10 text-muted pl-4 font-medium menu-title">Components </li>
@@ -32,7 +29,7 @@
 
                         </ul>
                     </li>
-                    <!-- menu item calendar-->
+                    <!-- menu item classrooms-->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#calendar-menu">
                             <div class="pull-left"><i class="ti-calendar"></i><span
@@ -45,16 +42,20 @@
 
                         </ul>
                     </li>
-                    <!-- menu item todo-->
+                    <!-- menu item sections-->
                     <li>
-                        <a href="todo-list.html"><i class="ti-menu-alt"></i><span class="right-nav-text">Todo
-                                list</span> </a>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#section-menu">
+                            <div class="pull-left"><i class="ti-calendar"></i><span
+                                    class="right-nav-text"> {{trans('sections_trans.sections')}}</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="section-menu" class="collapse" data-parent="#sidebarnav">
+                            <li> <a href="{{route('Sections.index')}}">{{trans('sections_trans.list_sections')}}</a> </li>
+
+                        </ul>
                     </li>
-                    <!-- menu item chat-->
-                    <li>
-                        <a href="chat-page.html"><i class="ti-comments"></i><span class="right-nav-text">Chat
-                            </span></a>
-                    </li>
+
                     <!-- menu item mailbox-->
                     <li>
                         <a href="mail-box.html"><i class="ti-email"></i><span class="right-nav-text">Mail

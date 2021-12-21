@@ -149,6 +149,9 @@ return [
     'attributes' => [
         'classroom_name_ar'=>'classroom name in arabic ',
         'classroom_name_en'=>'classroom name in english ',
+        'section_name_en'=>'section name in english',
+         'grade_id'=>'stage name',
+        'class_id'=>'classroom name',
     ],
 
 ];
