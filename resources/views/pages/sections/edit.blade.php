@@ -39,13 +39,29 @@
             <option value="{{ $section->classroom->id }}" selected>{{$section->classroom->class_name }}</option>
         </select>
     </div>
+    <br><br>
+
+    <div class="col">
+        <div class="form-group mt-1">
+            <input type="checkbox" name="status" value="1"
+                   id="switcheryColor4"
+                   class="switchery" data-color="success"
+                   @if($section->status==1)checked  @endif/>
+            <label for="switcheryColor4"
+                   class="card-title ml-1">{{ trans('sections_trans.status') }} </label>
+            @error('status')
+            <span class="text-danger">{{$message}}</span>
+            @enderror
+        </div>
+    </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">{{trans('grades_trans.close')}}</button>
         <button class="btn btn-success" id="save-data" type="submit" >{{trans('grades_trans.submit')}}</button>
 
     </div>
-    <br><br>
 
+
+    <br><br>
 </form>
 
 

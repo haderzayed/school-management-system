@@ -152,6 +152,31 @@ return [
         'section_name_en'=>'section name in english',
          'grade_id'=>'stage name',
         'class_id'=>'classroom name',
+
+
+        'father_name_ar'=>' Father Name In Arabic',
+        'father_name_en'=>' Father Name In English',
+        'job_father_ar'=>' Father Job In Arabic',
+        'job_father_en'=>'Father Job In English',
+        'national_id_father'=>'Father National ID' ,
+        'passport_id_father'=>'Father Passport ID ',
+        'phone_father'=>'Father Phone',
+        'nationality_father_id'=>'Father Nationality',
+        'blood_type_father_id'=>'Father Blood Type ',
+        'religion_father_id'=>'Father Religion',
+        'address_father'=>'Father Address',
+
+        'mother_name_ar'=>' Mother Name In Arabic',
+        'mother_name_en'=>'Mother Name In English',
+        'job_mother_ar'=>' Mother Job In Arabic',
+        'job_mother_en'=>'Mother Job In English',
+        'national_id_mother '=>'Mother National ID' ,
+        'passport_id_mother'=>'Mother Passport ID ',
+        'phone_mother'=>'Mother Phone',
+        'nationality_mother_id'=>'Mother Nationality',
+        'blood_type_mother_id'=>'Mother Blood Type ',
+        'religion_mother_id'=>'Mother Religion',
+        'address_mother'=>'Mother Address',
     ],
 
 ];

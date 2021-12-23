@@ -2,6 +2,7 @@
 @section('css')
 
     @toastr_css
+    @livewireStyles
 @endsection
 @section('title')
     {{trans('sections_trans.sections')}}
@@ -32,7 +33,7 @@
 </button>
     <br><br>
 
-
+@livewire('search-users')
 
  <div class="row">
     <div class="col-md-12 mb-30">
@@ -54,6 +55,7 @@
                             <th>{{trans('sections_trans.section_name')}}</th>
                             <th>{{trans('classrooms_trans.name')}}</th>
                             <th>{{trans('grades_trans.name')}}</th>
+                            <th>{{trans('sections_trans.status')}}</th>
                             <th>{{trans('grades_trans.process')}}</th>
                         </tr>
                         </thead>
@@ -63,7 +65,17 @@
                             <tr>
                                 <td> {{$section->name}} </td>
                                 <td> {{$section->classroom->class_name}} </td>
-                                <td> {{$section->grade->name}}</td>
+                                <td> {{$section->grade->name}}
+                                <td>
+                                    @if ($section->status === 1)
+                                        <label
+                                            class="badge badge-success">{{ trans('sections_trans.Status_Section_AC') }}</label>
+                                    @else
+                                        <label
+                                            class="badge badge-danger">{{ trans('sections_trans.Status_Section_No') }}</label>
+                                    @endif
+
+                                </td>
                                 <td>
                                     <button type="button" class="btn btn-info btn-sm fa fa-edit" data-target="#section" data-toggle="modal" onclick="editClassroom({{$section->id}})"
                                             name="{{trans('classrooms_trans.Edit')}} ">
@@ -103,6 +115,7 @@
 @section('js')
     @toastr_js
     @toastr_render
+    @livewireScripts
     <script>
         console.log('dd')
          $(document).ready(function() {

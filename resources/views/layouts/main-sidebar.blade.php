@@ -55,11 +55,20 @@
 
                         </ul>
                     </li>
-
-                    <!-- menu item mailbox-->
+                    <!-- menu item parents-->
                     <li>
-                        <a href="mail-box.html"><i class="ti-email"></i><span class="right-nav-text">Mail
-                                box</span> <span class="badge badge-pill badge-warning float-right mt-1">HOT</span> </a>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#parents-menu">
+                            <div class="pull-left"><i class="ti-user"></i><span
+                                    class="right-nav-text"> {{trans('parents_trans.parents')}}</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="parents-menu" class="collapse" data-parent="#sidebarnav">
+                            <li> <a href="{{route('Sections.index')}}">{{trans('parents_trans.parents_list')}}</a> </li>
+                            <li> <a href="{{route('parents.add')}}">{{trans('parents_trans.add_parents')}}</a> </li>
+
+                        </ul>
+
                     </li>
                     <!-- menu item Charts-->
                     <li>

@@ -62,11 +62,16 @@ class SectionsController extends Controller
       }
 
       public function update(Request $request , $id){
+
+          if(!$request->has('status'))
+              $request->request->add(['status'=>0]);
+
           $data=$request->validate([
               'section_name_ar'=>'required',
               'section_name_en'=>'required',
               'grade_id'=>'required',
               'class_id'=>'required',
+              'status'=>'in:0,1',
           ]);
 
 
@@ -76,6 +81,7 @@ class SectionsController extends Controller
                   'name' => ['en' => $data[  'section_name_en'], 'ar' => $data[ 'section_name_ar']],
                   'grade_id'=>$data['grade_id'],
                   'class_id'=>$data['class_id'],
+                  'status'=>$data['status'],
               ]);
               toastr()->success(trans('main_trans.Update Succsesufly'));
               return redirect()->route('Sections.index');

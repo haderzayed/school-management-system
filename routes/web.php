@@ -33,6 +33,8 @@ Route::group(
 
     Route::get('dashboard','HomeController@index');
 
+    ################################# Grades Route ###################
+
     Route::group(['namespace'=>'Grades','prefix'=>'Grades'],function(){
         Route::get('index','GradesController@index')->name('grades.index');
         Route::get('create','GradesController@create')->name('grades.create');
@@ -42,6 +44,8 @@ Route::group(
         Route::get('delete/{id}','GradesController@destroy')->name('grades.delete');
 
     });
+    ################################# Classrooms Route ###################
+
     Route::group(['namespace'=>'Classrooms','prefix'=>'Classrooms'],function (){
         Route::get('index','ClassroomsController@index')->name('Classrooms.index');
         Route::get('create','ClassroomsController@create')->name('Classrooms.create');
@@ -54,6 +58,7 @@ Route::group(
 
     });
 
+    ################################# Sections Route ###################
     Route::group(['namespace'=>'Sections','prefix'=>'Sections'],function (){
         Route::get('index','SectionsController@index')->name('Sections.index');
         Route::get('create','SectionsController@create')->name('Sections.create');
@@ -63,8 +68,9 @@ Route::group(
         Route::get('delete/{id}','SectionsController@destroy')->name('Sections.delete');
         Route::get('/classrooms/{id}','SectionsController@classrooms');
 
-
-
     });
+
+    ################################# parents Route ###################
+    Route::view('add-parents','livewire.show-form')->name('parents.add');
 });
 
