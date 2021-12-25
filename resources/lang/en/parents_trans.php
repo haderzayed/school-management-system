@@ -27,6 +27,13 @@ return [
     'Choose'=>'Choose',
     'Back'=>'Back',
     'Finish'=>'Finish',
+    'Attachments'=>'Attachments',
+    'National_ID_Father'=>'National ID Father',
+    'Phone_Father'=>'Father Phone',
+    'Name_Father'=>'Father Name',
+    'Job_Father'=>'Father Job',
+    'Passport_ID_Father'=>'Passport ID Father',
+
     'data'=>'Are you sure you ant to save data?'
 
 ];

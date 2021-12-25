@@ -27,6 +27,13 @@ return [
     'Choose'=>'اختر',
     'Back'=>'تراجع',
     'Finish'=>'انتهاء',
+    'Attachments'=>'المرفقات',
+    'National_ID_Father'=>'الرقم القومي للاب',
+    'Phone_Father'=>'هاتف الاب',
+    'Name_Father'=>'اسم الاب',
+    'Job_Father'=>'وظيفة الاب',
+    'Passport_ID_Father'=>'رقم جواز سفر الاب',
+
     'data'=>'هل انت متاكد من حفظ البيانات ؟',
 
 

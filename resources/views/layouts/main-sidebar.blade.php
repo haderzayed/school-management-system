@@ -64,9 +64,8 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="parents-menu" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="{{route('Sections.index')}}">{{trans('parents_trans.parents_list')}}</a> </li>
-                            <li> <a href="{{route('parents.add')}}">{{trans('parents_trans.add_parents')}}</a> </li>
-
+                            <li> <a href="{{route('parents.add')}}">{{trans('parents_trans.parents_list')}}</a> </li>
+ 
                         </ul>
 
                     </li>

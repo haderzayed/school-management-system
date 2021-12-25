@@ -12,7 +12,9 @@
         </div>
     @endif
 
-
+    @if($show_table)
+        @include('livewire.index-parent')
+    @else
     <div class="stepwizard">
         <div class="stepwizard-row setup-panel">
             <div class="stepwizard-step">
@@ -38,5 +40,6 @@
     @include('livewire.mother-form')
     @include('livewire.confirm-form')
 
+    @endif
 
 </div>

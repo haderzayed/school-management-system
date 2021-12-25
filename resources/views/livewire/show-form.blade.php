@@ -1,8 +1,8 @@
 @extends('layouts.master')
 @section('css')
-
+    @toastr_css
 @section('title')
-    {{trans('parents_trans.add_parents')}}
+    {{trans('parents_trans.parents')}}
 @stop
 @endsection
 @section('page-header')
@@ -10,7 +10,7 @@
 <div class="page-title">
     <div class="row">
         <div class="col-sm-6">
-            <h4 class="mb-0">  {{trans('parents_trans.add_parents')}}</h4>
+            <h4 class="mb-0">  {{trans('parents_trans.parents')}}</h4>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right ">
@@ -36,5 +36,7 @@
 <!-- row closed -->
 @endsection
 @section('js')
+    @toastr_js
+    @toastr_render
     @livewireScripts
 @endsection
