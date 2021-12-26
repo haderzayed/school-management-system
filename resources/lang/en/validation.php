@@ -177,6 +177,15 @@ return [
         'blood_type_mother_id'=>'Mother Blood Type ',
         'religion_mother_id'=>'Mother Religion',
         'address_mother'=>'Mother Address',
+        'Name_ar'=>'Name in arabic',
+        'Name_en'=>'Name in English',
+        'Specialization_id'=>'Specialization_id',
+        'Gender_id'=>'Gender',
+        'Joining_Date'=>'Joining Date',
+        'Address'=>'Address',
+        'Email'=>'Email',
+        'Password'=>'Password',
+
     ],
 
 ];

@@ -12,8 +12,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
          $this->call(BloodSeeder::class);
-        $this->call(NationalSeeder::class);
-        $this->call(ReligionSeeder::class);
+         $this->call(NationalSeeder::class);
+         $this->call(ReligionSeeder::class);
+         $this->call(SpecializationSeeder::class);
+         $this->call(GenderSeeder::class);
 
 
     }

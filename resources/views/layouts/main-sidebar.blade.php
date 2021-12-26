@@ -65,23 +65,23 @@
                         </a>
                         <ul id="parents-menu" class="collapse" data-parent="#sidebarnav">
                             <li> <a href="{{route('parents.add')}}">{{trans('parents_trans.parents_list')}}</a> </li>
- 
+
                         </ul>
 
                     </li>
-                    <!-- menu item Charts-->
+                    <!-- menu item teachers-->
                     <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#chart">
-                            <div class="pull-left"><i class="ti-pie-chart"></i><span
-                                    class="right-nav-text">Charts</span></div>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#teachers-menu">
+                            <div class="pull-left"><i class="ti-user"></i><span
+                                    class="right-nav-text"> {{trans('teachers_trans.teachers')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
-                        <ul id="chart" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="chart-js.html">Chart.js</a> </li>
-                            <li> <a href="chart-morris.html">Chart morris </a> </li>
-                            <li> <a href="chart-sparkline.html">Chart Sparkline</a> </li>
+                        <ul id="teachers-menu" class="collapse" data-parent="#sidebarnav">
+                            <li> <a href="{{route('Teachers.index')}}">{{trans('teachers_trans.teachers_list')}}</a> </li>
+
                         </ul>
+
                     </li>
 
                     <!-- menu font icon-->
