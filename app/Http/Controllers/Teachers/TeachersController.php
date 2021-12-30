@@ -48,6 +48,6 @@ class TeachersController extends Controller
 
     public function destroy($id){
 
-        return $this->Teacher->deleteTeachers($id);
+        return $this->Teacher->deleteTeachers($id );
     }
 }

@@ -6,6 +6,7 @@ return [
     'teachers_list'=>'كل المدرسين',
     'add_teachers'=>'اضافة مدرس',
     'edit_teachers'=>'تعديل المدرس',
+    'teacher_select'=>'اختر مدرس',
     'Name_Teacher'=>'اسم المدرس',
     'Email'=>'البريد الالكتروني  ',
     'Password'=>'الرقم السري',

@@ -40,6 +40,18 @@
 
         </select>
     </div>
+    <br>
+    <div class="col">
+        <label for="inputName" class="control-label">{{ trans('teachers_trans.teacher_select') }}</label>
+        <select  class="custom-select" name="teacher_id[]" multiple aria-label="multiple select example">
+            <!--placeholder-->
+            <option value="" selected disabled>{{ trans('teachers_trans.teacher_select') }}</option>
+            @foreach($teachers as $teacher)
+                <option value="{{$teacher->id}}">{{$teacher->name}}</option>
+            @endforeach
+        </select>
+    </div>
+    <br>
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">{{trans('grades_trans.close')}}</button>
         <button class="btn btn-success" id="save-data" type="submit" >{{trans('grades_trans.submit')}}</button>

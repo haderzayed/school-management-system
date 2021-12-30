@@ -186,6 +186,15 @@ return [
         'Email'=>'Email',
         'Password'=>'Password',
 
+        'name_ar'=>'Name in Arabic',
+        'name_en'=>'Name in  English',
+        'gender_id'=>'Gender',
+        'nationality_id'=>'Nationality',
+        'blood_id'=>'Blood Type',
+        'date_birth'=>'Date Of Birth',
+        'parent_id'=>'Father Name',
+        'academic_year'=>'Academic Year',
+
     ],
 
 ];

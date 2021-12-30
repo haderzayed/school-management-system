@@ -67,7 +67,7 @@ Route::group(
         Route::post('update/{id}','SectionsController@update')->name('Sections.update');
         Route::get('delete/{id}','SectionsController@destroy')->name('Sections.delete');
         Route::get('/classrooms/{id}','SectionsController@classrooms');
-
+        Route::get('/sections/{id}','SectionsController@sections');
     });
 
     ################################# parents Route ###################
@@ -82,7 +82,16 @@ Route::group(
         Route::get('/edit/{id}','TeachersController@edit')->name('Teachers.edit');
         Route::post('update/{id}','TeachersController@update')->name('Teachers.update');
         Route::get('delete/{id}','TeachersController@destroy')->name('Teachers.delete');
+    });
+        ################################# students Route ###################
 
+        Route::group(['namespace'=>'Students','prefix'=>'Students'],function (){
+            Route::get('index','StudentsController@index')->name('Students.index');
+            Route::get('create','StudentsController@create')->name('Students.create');
+            Route::post('store','StudentsController@store')->name('Students.store');
+            Route::get('/edit/{id}','StudentsController@edit')->name('Students.edit');
+            Route::post('update/{id}','StudentsController@update')->name('Students.update');
+            Route::get('delete/{id}','StudentsController@destroy')->name('Students.delete');
 
     });
 });

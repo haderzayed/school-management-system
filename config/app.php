@@ -175,6 +175,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\TeacherServiceProvider::class,
+        App\Providers\StudentServiceProvider::class,
         Yoeunes\Toastr\ToastrServiceProvider::class
 
     ],
