@@ -2,13 +2,13 @@
 @section('css')
     @toastr_css
 @section('title')
-    {{trans('students_trans.list_students')}}
+    {{trans('Students_trans.students_list')}}
 @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
 @section('PageTitle')
-    {{trans('students_trans.list_students')}}
+    {{trans('Students_trans.students_list')}}
 @stop
 <!-- breadcrumb -->
 @endsection

@@ -29,7 +29,7 @@
                         </div>
                     @endif
 
-                    <form method="post"  action="{{ route('Students.store') }}" autocomplete="off">
+                    <form method="post"  action="{{ route('Students.store') }}" autocomplete="off" enctype="multipart/form-data">
                         @csrf
                         <h6 style="font-family: 'Cairo', sans-serif;color: blue">{{trans('students_trans.personal_information')}}</h6><br>
                         <div class="row">
@@ -167,7 +167,17 @@
                                     </select>
                                 </div>
                             </div>
-                        </div><br>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>{{trans('students_trans.password')}} :</label>
+                                    <input type="file"  accept="image/*" name="photos[]" class="form-control" multiple >
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+
                         <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="submit">{{trans('students_trans.submit')}}</button>
                     </form>
 

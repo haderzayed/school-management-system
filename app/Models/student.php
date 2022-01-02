@@ -28,4 +28,8 @@ class student extends Model
 
         return $this->belongsTo(section::class);
     }
+    public function images(){
+
+        return $this->morphMany(Image::class,'imageable');
+    }
 }

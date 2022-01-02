@@ -4,10 +4,12 @@ namespace App\Repository;
 use App\Models\blood;
 use App\Models\gender;
 use App\Models\grade;
+use App\Models\Image;
 use App\Models\my_parents;
 use App\Models\nationality;
 use App\Models\student;
 use http\Env\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class StudentRepository implements StudentRepositoryInterface{
@@ -27,7 +29,7 @@ class StudentRepository implements StudentRepositoryInterface{
     }
     public function storeStudent($request){
         $request->validate([
-            'email'=>'required|unique',
+            'email'=>'required|unique:students,email',
             'password' => 'required',
             'name_ar' =>  'required',
             'name_en' =>  'required',
@@ -42,7 +44,8 @@ class StudentRepository implements StudentRepositoryInterface{
         ]);
 
         try{
-            student::create([
+        DB::beginTransaction();
+           $student=student::create([
                 'email'=>$request['email'],
                 'password'=>Hash::make($request['password']),
                 'name' => ['en' => $request[  'name_en'], 'ar' => $request[ 'name_ar']],
@@ -57,11 +60,25 @@ class StudentRepository implements StudentRepositoryInterface{
                 'academic_year'=>$request['academic_year'],
 
             ]);
+           if($request->hasfile('photos')){
+               foreach ($request->file('photos') as $photo){
+
+                   $name=$photo->getClientOriginalName();
+                   $photo->storeAS('attachments/students/'.$student-> name,$name,'upload_attachments');
+
+                   Image::create([
+                        'file_name'=>$name,
+                        'imageable_id'=>$student->id,
+                        'imageable_type'=>' App\Models\student',
+                   ]);
+               }
+           }
+            DB::commit();
             toastr()->success(trans('main_trans.Added Succsesufly'));
             return redirect()->route('Students.index');
 
         }catch (\Exception $exception){
-
+            DB::rollBack();
             toastr()->error(trans('main_trans.sorry error'));
             return back();
         }
